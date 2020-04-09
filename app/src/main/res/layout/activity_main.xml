@@ -178,4 +178,31 @@
             android:textColorHint="#370208" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:shadowColor="#370208"
+        android:text="Submit"
+        android:textColor="#370208"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/ed_rrsp"
+        app:layout_constraintTop_toBottomOf="@+id/ed_rrsp" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="#FFFFFF"
+        android:text="Clear"
+        android:textColor="#360005"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ed_rrsp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btn_submit"
+        app:layout_constraintTop_toBottomOf="@+id/ed_rrsp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
