@@ -3,6 +3,7 @@ package com.king.c0780996_w2020_mad3125_midterm.user_interface;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.king.c0780996_w2020_mad3125_midterm.R;
+import com.king.c0780996_w2020_mad3125_midterm.model_classes.CRACustomer;
 
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
@@ -212,4 +214,81 @@ public class DetailsEntryActivity extends AppCompatActivity
         }
 
 
+    public void fieldChecker()
+    {
+        boolean flagOne = false;
+        if(ed_sintext.getText().toString().isEmpty())
+        {
+            ed_sin.setError("Enter your SIN Number");
+            flagOne = true;
+            return;
+        }
+        if(ed_fnametext.getText().toString().isEmpty())
+        {
+            ed_fname.setError("Enter your first name");
+            flagOne = true;
+            return;
+        }
+        if(ed_lnametext.getText().toString().isEmpty())
+        {
+            ed_lname.setError("Enter your last name");
+            flagOne = true;
+            return;
+        }
+        if(ed_dobtext.getText().toString().isEmpty())
+        {
+            ed_dob.setError("Enter your date of birth");
+            flagOne = true;
+            return;
+        }
+        if(ed_grossincometext.getText().toString().isEmpty())
+        {
+            ed_grossincome.setError("Enter your gross income");
+            flagOne = true;
+            return;
+        }
+        if(ed_rrsptext.getText().toString().isEmpty())
+        {
+            ed_rrsp.setError("Enter your RRSP");
+            flagOne = true;
+            return;
+        }
+
+        if(!flagOne)
+        {
+            int flagTwo = 0;
+            if(ageCalculation(ed_dobtext.getText().toString()) < 18)
+            {
+                flagTwo = 1;
+                textWarning.setVisibility(View.VISIBLE);
+                btn_clear.setVisibility(View.INVISIBLE);
+                btn_submit.setVisibility(View.INVISIBLE);
+                btn_ok.setVisibility(View.VISIBLE);
+                ed_dob.setError("Invalid date of birth");
+            }
+
+            if(!sinValidations(ed_sintext.getText().toString()))
+            {
+                flagTwo = 1;
+                ed_sin.setError("Invalid SIN number");
+            }
+
+            if(flagTwo == 0)
+            {
+                CRACustomer craCustomer = new CRACustomer(ed_sintext.getText().toString(),
+                        ed_fnametext.getText().toString(),
+                        ed_lnametext.getText().toString(),
+                        genderFetch(),
+                        .getText().toString(),
+                        Double.parseDouble(ed_grossincometext.getText().toString()),
+                        Double.parseDouble(ed_rrsptext.getText().toString()));
+                Intent mIntent = new Intent(DetailsEntryActivity.this, TaxCalculationDetailsActivity.class);
+                mIntent.putExtra("CRACustomer", craCustomer);
+                startActivity(mIntent);
+            }
+        }
     }
+
+
+
+}
