@@ -162,5 +162,29 @@ public class CRACustomer implements Serializable
         this.federalTax = federalTax;
     }
 
+    public double getProvincialTax() {
+
+        if (getTotalTaxableIncome()<=10582){
+            this.provincialTax = 0.0;
+        }else if(getTotalTaxableIncome()>=10582.01 && getTotalTaxableIncome()<=43906) {
+            this.provincialTax = 0.0 + (getTotalTaxableIncome() - 10582.01) * 0.0505;
+        }else if(getTotalTaxableIncome()>=43906.01 && getTotalTaxableIncome()<=87813) {
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + ((getTotalTaxableIncome()-43906.01) * 0.0915);
+        }else if(getTotalTaxableIncome()>=87813.01 && getTotalTaxableIncome()<=150000){
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + (43906.99 * 0.0915) + ((getTotalTaxableIncome()-87813.01) * 0.1116 );
+        }else if(getTotalTaxableIncome()>=150000.01 && getTotalTaxableIncome()<=220000){//
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + ((getTotalTaxableIncome()-150000.01) * 0.1216);
+        }
+        else {
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + (69999.99 * 0.1216) + ((getTotalTaxableIncome()-220000.01) * 0.1316);
+        }
+
+        return provincialTax;
+    }
+
+    public void setProvincialTax(double provincialTax) {
+        this.provincialTax = provincialTax;
+    }
+
    }
 
