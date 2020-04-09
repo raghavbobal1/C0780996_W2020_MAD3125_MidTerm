@@ -202,5 +202,20 @@ public class CRACustomer implements Serializable
         this.cpp = cpp;
     }
 
-  }
+    public double getEi() {
+        double eiGrossModel = this.grossIncome;
+        if (eiGrossModel <53100.0){
+            this.ei = eiGrossModel * 0.0162;
+        }else{
+            this.ei = 53100 * 0.0162;
+        }
+        return ei;
+    }
+
+    public void setEi(double ei) {
+        this.ei = ei;
+    }
+
+  
+}
 
