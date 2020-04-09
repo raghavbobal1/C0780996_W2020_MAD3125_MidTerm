@@ -216,6 +216,36 @@ public class CRACustomer implements Serializable
         this.ei = ei;
     }
 
-  
+    public double getRrspContributed() {
+        return rrspContributed;
+    }
+
+    public void setRrspContributed(double rrspContributed) {
+        this.rrspContributed = rrspContributed;
+    }
+
+    public double getCarryForwardRRSP() {
+
+
+        double rrspContri = this.rrspContributed;
+
+        this.carryForwardRRSP = getMaxRRSP() - rrspContri;
+
+        return carryForwardRRSP;
+    }
+    public double getMaxRRSP() {
+        this.maxRRSP = this.grossIncome * 0.18;
+        return maxRRSP;
+    }
+
+    public void setMaxRRSP(double maxRRSP) {
+        this.maxRRSP = maxRRSP;
+    }
+
+    public void setCarryForwardRRSP(double carryForwardRRSP) {
+        this.carryForwardRRSP = carryForwardRRSP;
+    }
+
+    
 }
 
