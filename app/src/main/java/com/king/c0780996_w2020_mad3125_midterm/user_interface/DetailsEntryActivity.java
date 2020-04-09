@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -21,7 +20,7 @@ public class DetailsEntryActivity extends AppCompatActivity
     private Button btn_clear;
     private Button btn_ok;
 
-    private Spinner genderSpinner;
+    private Spinner spinner_gender;
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -174,6 +173,28 @@ public class DetailsEntryActivity extends AppCompatActivity
         });
     }
 
+        private void variableInitialization()
+        {
+            ed_rrsptext = findViewById(R.id.ed_rrsptext);
+            ed_rrsp = findViewById(R.id.ed_rrsp);
+            ed_dobtext = findViewById(R.id.ed_dobtext);
+            ed_dob = findViewById(R.id.ed_dob);
+            ed_grossincometext = findViewById(R.id.ed_grossincometext);
+            ed_grossincome = findViewById(R.id.ed_grossincome);
+            ed_lnametext = findViewById(R.id.ed_lnametext);
+            ed_lname = findViewById(R.id.ed_lname);
+            ed_fnametext = findViewById(R.id.ed_fnametext);
+            ed_fname = findViewById(R.id.ed_fname);
+            ed_sintext = findViewById(R.id.ed_sintext);
+            ed_sin = findViewById(R.id.ed_sin);
+            ed_doftext = findViewById(R.id.ed_doftext);
+            ed_dof = findViewById(R.id.ed_dof);
+            spinner_gender = findViewById(R.id.spinner_gender);
+            btn_clear = findViewById(R.id.btn_clear);
+            btn_submit = findViewById(R.id.btn_submit);
+            btn_ok = findViewById(R.id.btn_ok);
+            textWarning = findViewById(R.id.textWarning);
+        }
 
 
 

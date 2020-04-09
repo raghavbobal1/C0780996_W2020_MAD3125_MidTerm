@@ -115,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner">
+        app:layout_constraintTop_toBottomOf="@+id/spinner_gender">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/ed_doftext"
@@ -148,7 +148,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_gender"
         android:layout_width="276dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
