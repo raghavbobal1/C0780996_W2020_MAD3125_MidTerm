@@ -4,86 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#480606"
+    android:background="#B21616"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_name"
-        android:layout_width="165dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_fname"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="First Name"
-            >
-
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_lname"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="Last Name"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_sin"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="Sin Number"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_dob"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="Birth Date"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_dof"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="Filling Date"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_grossincome"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="Gross Income"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_rrsp"
-            android:layout_width="163dp"
-            android:layout_height="37dp"
-            android:hint="RRSP Contibution"
-            >
-        </com.google.android.material.textfield.TextInputEditText>
-
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView21"
-        android:layout_width="265dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="4dp"
-        android:singleLine="true"
+        android:id="@+id/textView24"
+        android:layout_width="276dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="24dp"
         android:text="Enter Your Details"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:fontFamily="@font/berkshire_swash"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_sin"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_sintext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="SIN Number"
+            android:inputType="number"
+            android:textColor="#370208"
+            android:textColorHint="#370208" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_fname"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/ed_sin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_sin"
+        app:layout_constraintTop_toBottomOf="@+id/ed_sin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_fnametext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="First Name"
+            android:textColor="#370208"
+            android:textColorHint="#370208" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_lname"
+            android:layout_width="276dp"
+            android:layout_height="52dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_lnametext"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="#FFFFFF"
+                android:hint="First Name"
+                android:textColor="#370208"
+                android:textColorHint="#370208" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
