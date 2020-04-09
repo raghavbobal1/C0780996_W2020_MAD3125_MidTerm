@@ -5,23 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.king.c0780996_w2020_mad3125_midterm.R;
 import com.king.c0780996_w2020_mad3125_midterm.model_classes.CRACustomer;
+import com.king.c0780996_w2020_mad3125_midterm.utility.Formatter;
 
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
+import java.util.Calendar;
 
 public class DetailsEntryActivity extends AppCompatActivity
 {
@@ -30,6 +37,7 @@ public class DetailsEntryActivity extends AppCompatActivity
     private Button btn_ok;
 
     private Spinner spinner_gender;
+    private String gender;
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -113,7 +121,8 @@ public class DetailsEntryActivity extends AppCompatActivity
             }
         });
 
-        ed_lnametext.addTextChangedListener(new TextWatcher() {
+        ed_lnametext.addTextChangedListener(new TextWatcher()
+        {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -130,7 +139,8 @@ public class DetailsEntryActivity extends AppCompatActivity
             }
         });
 
-        ed_grossincometext.addTextChangedListener(new TextWatcher() {
+        ed_grossincometext.addTextChangedListener(new TextWatcher()
+        {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -147,7 +157,8 @@ public class DetailsEntryActivity extends AppCompatActivity
             }
         });
 
-        ed_dobtext.addTextChangedListener(new TextWatcher() {
+        ed_dobtext.addTextChangedListener(new TextWatcher()
+        {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -280,7 +291,7 @@ public class DetailsEntryActivity extends AppCompatActivity
                 CRACustomer craCustomer = new CRACustomer(ed_sintext.getText().toString(),
                         ed_fnametext.getText().toString(),
                         ed_lnametext.getText().toString(),
-                        genderFetch(),
+                        getGender(),
                         .getText().toString(),
                         Double.parseDouble(ed_grossincometext.getText().toString()),
                         Double.parseDouble(ed_rrsptext.getText().toString()));
@@ -290,6 +301,13 @@ public class DetailsEntryActivity extends AppCompatActivity
             }
         }
     }
+
+    private void getGender()
+    {
+        int genderSpinnerPosition = spinner_gender.getSelectedItemPosition();
+        gender = String.valueOf(spinner_gender.getItemAtPosition(genderSpinnerPosition));
+    }
+
 
     public boolean sinValidations(String s)
     {
@@ -325,4 +343,61 @@ public class DetailsEntryActivity extends AppCompatActivity
         });
     }
 
+    private void datePicker()
+    {
+        ed_dobtext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog dialog = new DatePickerDialog(
+                        DetailsEntryActivity.this,
+                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                        mDateSetListener,
+                        year, month, day);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
+
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day)
+            {
+                String date ="";
+                month = month + 1;
+                String monthName = getMonth(month);
+                if(day<10) {
+                    date = "0"+day + "-" + monthName + "-" + year;
+                }
+                else
+                {
+                    date = day + "-" + monthName + "-" + year;
+                }
+                ed_dobtext.setText(date);
+            }
+        };
+    }
+
+    public static String getMonth(int monthNum)
+    {
+        String[] monthName = {"Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"};
+        return monthName[monthNum-1];
+    }
+
+    private int ageCalculation(String s)
+    {
+        int age = 0;
+        if(!ed_dobtext.getText().toString().isEmpty())
+        {
+            s = ed_dobtext.getText().toString();
+            age = LocalDate.now().getYear() - Formatter.getInstance().stringToDate(s).getYear();
+            return age;
+        }
+        Toast.makeText(DetailsEntryActivity.this, age, Toast.LENGTH_SHORT).show();
+        return age;
+    }
 }
