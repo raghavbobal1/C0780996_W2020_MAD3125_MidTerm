@@ -15,21 +15,21 @@ public class CRACustomer implements Serializable
         public String gender;
         public int age;
         public LocalDate taxFilingDate;
-        public float grossIncome;
-        public float federalTax;
-        public float provincialTax;
-        public float cpp;
-        public float ei;
-        public float rrspContributed;
-        public float carryForwardRRSP;
-        public float totalTaxableIncome;
-        public float totalTaxPayed;
-        public float maxRRSP;
+        public double grossIncome;
+        public double federalTax;
+        public double provincialTax;
+        public double cpp;
+        public double ei;
+        public double rrspContributed;
+        public double carryForwardRRSP;
+        public double totalTaxableIncome;
+        public double totalTaxPayed;
+        public double maxRRSP;
 
         public CRACustomer(long sinNumber, String firstName, String lastName, String fullName,
-                           Date birthDate, String gender, int age, LocalDate taxFilingDate, float grossIncome, float federalTax,
-                           float provincialTax, float cpp, float ei, float rrspContributed, float carryForwardRRSP,
-                           float totalTaxableIncome, float totalTaxPayed) {
+                           Date birthDate, String gender, int age, LocalDate taxFilingDate, double grossIncome, double federalTax,
+                           double provincialTax, double cpp, double ei, double rrspContributed, double carryForwardRRSP,
+                           double totalTaxableIncome, double totalTaxPayed) {
             this.sinNumber = sinNumber;
             this.firstName = firstName;
             this.lastName = lastName;
@@ -50,7 +50,7 @@ public class CRACustomer implements Serializable
         }
 
         public CRACustomer(long sinNumber, String firstName, String lastName,Date birthDate,
-                           String gender, int age, LocalDate taxFilingDate, float grossIncome,float rrspContributed)
+                           String gender, int age, LocalDate taxFilingDate, double grossIncome,double rrspContributed)
         {
 
             this.sinNumber = sinNumber;
@@ -130,14 +130,37 @@ public class CRACustomer implements Serializable
         this.taxFilingDate = taxFilingDate;
     }
 
-    public float getGrossIncome() {
+    public double getGrossIncome() {
         return grossIncome;
     }
 
-    public void setGrossIncome(float grossIncome) {
+    public void setGrossIncome(double grossIncome) {
         this.grossIncome = grossIncome;
     }
 
-   
-}
+    public double getFederalTax()
+    {
+        if (getTotalTaxableIncome()<=12069){
+            this.federalTax = 0.0;
+        }else if(getTotalTaxableIncome()>=12069.01 && getTotalTaxableIncome()<=47630) {
+            this.federalTax = 0.0 + (getTotalTaxableIncome() - 12069.01) * 0.15;
+        }else if(getTotalTaxableIncome()>=47630.01 && getTotalTaxableIncome()<=95259) {
+            this.federalTax = 0.0 + (35560.99 * 0.15) + ((getTotalTaxableIncome()-47630.01) * 0.2050);
+        }else if(getTotalTaxableIncome()>=95259.01 && getTotalTaxableIncome()<=147667){
+            this.federalTax = 0.0 + (35560.99 * 0.15) + (47628.99 * 0.2050) + ((getTotalTaxableIncome()-95259.01) * 0.26 );
+        }else if(getTotalTaxableIncome()>=147667.01 && getTotalTaxableIncome()<=210371){
+            this.federalTax = 0.0 + + (35560.99 * 0.15) + (47628.99 * 0.2050) + (52407.99 * 0.26) + ((getTotalTaxableIncome()-147667.01) * 0.29);
+        }
+        else {
+            this.federalTax = 0.0 + + (35560.99 * 0.15) + (47628.99 * 0.2050) + (52407.99 * 0.26) + (62703.99 * 0.29) + ((getTotalTaxableIncome()-210371.01) * 0.33);
+        }
+
+        return federalTax;
+    }
+
+    public void setFederalTax(double federalTax) {
+        this.federalTax = federalTax;
+    }
+
+   }
 
