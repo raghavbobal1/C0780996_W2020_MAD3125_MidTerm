@@ -246,6 +246,52 @@ public class CRACustomer implements Serializable
         this.carryForwardRRSP = carryForwardRRSP;
     }
 
-    
+    public double getTotalTaxableIncome() {
+
+        if (getRrspContributed()>getMaxRRSP()){
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getMaxRRSP());
+        }else{
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getRrspContributed());
+        }
+
+        return totalTaxableIncome;
+    }
+
+    public void setTotalTaxableIncome(double totalTaxableIncome) {
+        this.totalTaxableIncome = totalTaxableIncome;
+    }
+
+    public double getTotalTaxPayed() {
+
+        this.totalTaxPayed = getFederalTax() + getProvincialTax();
+        return totalTaxPayed;
+    }
+
+    public void setTotalTaxPayed(double totalTaxPayed) {
+        this.totalTaxPayed = totalTaxPayed;
+    }
+
+    @Override
+    public String toString() {
+        return "CRACustomer{" +
+                "personSINNumber=" + sinNumber +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", birthDate=" + birthDate +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", taxFilingDate=" + taxFilingDate +
+                ", grossIncome=" + grossIncome +
+                ", federalTax=" + federalTax +
+                ", provincialTax=" + provincialTax +
+                ", cpp=" + cpp +
+                ", ei=" + ei +
+                ", rrspContributed=" + rrspContributed +
+                ", carryForwardRRSP=" + carryForwardRRSP +
+                ", totalTaxableIncome=" + totalTaxableIncome +
+                ", totalTaxPayed=" + totalTaxPayed +
+                '}';
+    }
 }
 
