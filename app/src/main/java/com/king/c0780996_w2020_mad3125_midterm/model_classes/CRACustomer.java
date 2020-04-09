@@ -106,14 +106,6 @@ public class CRACustomer implements Serializable
         this.birthDate = birthDate;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public int getAge() {
         return age;
     }
@@ -122,6 +114,16 @@ public class CRACustomer implements Serializable
         this.age = age;
     }
 
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    
     public LocalDate getTaxFilingDate() {
         return taxFilingDate;
     }
@@ -136,6 +138,56 @@ public class CRACustomer implements Serializable
 
     public void setGrossIncome(double grossIncome) {
         this.grossIncome = grossIncome;
+    }
+
+    public double getTotalTaxableIncome() {
+
+        if (getRrspContributed()>getMaxRRSP()){
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getMaxRRSP());
+        }else{
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getRrspContributed());
+        }
+
+        return totalTaxableIncome;
+    }
+
+    public void setTotalTaxableIncome(double totalTaxableIncome) {
+        this.totalTaxableIncome = totalTaxableIncome;
+    }
+
+    public double getTotalTaxPayed() {
+
+        this.totalTaxPayed = getFederalTax() + getProvincialTax();
+        return totalTaxPayed;
+    }
+
+    public void setTotalTaxPayed(double totalTaxPayed) {
+        this.totalTaxPayed = totalTaxPayed;
+    }
+
+
+    public double getProvincialTax() {
+
+        if (getTotalTaxableIncome()<=10582){
+            this.provincialTax = 0.0;
+        }else if(getTotalTaxableIncome()>=10582.01 && getTotalTaxableIncome()<=43906) {
+            this.provincialTax = 0.0 + (getTotalTaxableIncome() - 10582.01) * 0.0505;
+        }else if(getTotalTaxableIncome()>=43906.01 && getTotalTaxableIncome()<=87813) {
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + ((getTotalTaxableIncome()-43906.01) * 0.0915);
+        }else if(getTotalTaxableIncome()>=87813.01 && getTotalTaxableIncome()<=150000){
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + (43906.99 * 0.0915) + ((getTotalTaxableIncome()-87813.01) * 0.1116 );
+        }else if(getTotalTaxableIncome()>=150000.01 && getTotalTaxableIncome()<=220000){//
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + ((getTotalTaxableIncome()-150000.01) * 0.1216);
+        }
+        else {
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + (69999.99 * 0.1216) + ((getTotalTaxableIncome()-220000.01) * 0.1316);
+        }
+
+        return provincialTax;
+    }
+
+    public void setProvincialTax(double provincialTax) {
+        this.provincialTax = provincialTax;
     }
 
     public double getFederalTax()
@@ -162,28 +214,18 @@ public class CRACustomer implements Serializable
         this.federalTax = federalTax;
     }
 
-    public double getProvincialTax() {
-
-        if (getTotalTaxableIncome()<=10582){
-            this.provincialTax = 0.0;
-        }else if(getTotalTaxableIncome()>=10582.01 && getTotalTaxableIncome()<=43906) {
-            this.provincialTax = 0.0 + (getTotalTaxableIncome() - 10582.01) * 0.0505;
-        }else if(getTotalTaxableIncome()>=43906.01 && getTotalTaxableIncome()<=87813) {
-            this.provincialTax = 0.0 + (33323.99 * 0.0505) + ((getTotalTaxableIncome()-43906.01) * 0.0915);
-        }else if(getTotalTaxableIncome()>=87813.01 && getTotalTaxableIncome()<=150000){
-            this.provincialTax = 0.0 + (33323.99 * 0.0505) + (43906.99 * 0.0915) + ((getTotalTaxableIncome()-87813.01) * 0.1116 );
-        }else if(getTotalTaxableIncome()>=150000.01 && getTotalTaxableIncome()<=220000){//
-            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + ((getTotalTaxableIncome()-150000.01) * 0.1216);
+    public double getEi() {
+        double eiGrossModel = this.grossIncome;
+        if (eiGrossModel <53100.0){
+            this.ei = eiGrossModel * 0.0162;
+        }else{
+            this.ei = 53100 * 0.0162;
         }
-        else {
-            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + (69999.99 * 0.1216) + ((getTotalTaxableIncome()-220000.01) * 0.1316);
-        }
-
-        return provincialTax;
+        return ei;
     }
 
-    public void setProvincialTax(double provincialTax) {
-        this.provincialTax = provincialTax;
+    public void setEi(double ei) {
+        this.ei = ei;
     }
 
     public double getCpp() {
@@ -200,20 +242,6 @@ public class CRACustomer implements Serializable
 
     public void setCpp(double cpp) {
         this.cpp = cpp;
-    }
-
-    public double getEi() {
-        double eiGrossModel = this.grossIncome;
-        if (eiGrossModel <53100.0){
-            this.ei = eiGrossModel * 0.0162;
-        }else{
-            this.ei = 53100 * 0.0162;
-        }
-        return ei;
-    }
-
-    public void setEi(double ei) {
-        this.ei = ei;
     }
 
     public double getRrspContributed() {
@@ -246,30 +274,7 @@ public class CRACustomer implements Serializable
         this.carryForwardRRSP = carryForwardRRSP;
     }
 
-    public double getTotalTaxableIncome() {
 
-        if (getRrspContributed()>getMaxRRSP()){
-            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getMaxRRSP());
-        }else{
-            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getRrspContributed());
-        }
-
-        return totalTaxableIncome;
-    }
-
-    public void setTotalTaxableIncome(double totalTaxableIncome) {
-        this.totalTaxableIncome = totalTaxableIncome;
-    }
-
-    public double getTotalTaxPayed() {
-
-        this.totalTaxPayed = getFederalTax() + getProvincialTax();
-        return totalTaxPayed;
-    }
-
-    public void setTotalTaxPayed(double totalTaxPayed) {
-        this.totalTaxPayed = totalTaxPayed;
-    }
 
     @Override
     public String toString() {
