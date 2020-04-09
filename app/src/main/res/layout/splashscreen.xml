@@ -24,7 +24,7 @@
         android:layout_marginTop="184dp"
         android:singleLine="true"
         android:text="Tax Math"
-        android:textColor="#E8A9F4"
+        android:textColor="#E193F1"
         android:textSize="150sp"
         app:fontFamily="@font/berkshire_swash"
         app:layout_constraintEnd_toEndOf="parent"
