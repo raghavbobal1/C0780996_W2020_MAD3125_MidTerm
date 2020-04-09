@@ -186,5 +186,21 @@ public class CRACustomer implements Serializable
         this.provincialTax = provincialTax;
     }
 
-   }
+    public double getCpp() {
+
+        double cppGrossModel = this.grossIncome;
+        if(cppGrossModel < 57400.0){
+            this.cpp = cppGrossModel * 0.0510;
+        }
+        else{
+            this.cpp = 57400 * 0.0510;
+        }
+        return cpp;
+    }
+
+    public void setCpp(double cpp) {
+        this.cpp = cpp;
+    }
+
+  }
 
