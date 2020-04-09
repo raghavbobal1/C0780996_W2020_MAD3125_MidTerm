@@ -76,6 +76,19 @@ public class DetailsEntryActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        variableInitialization();
+        setValue();
+        datePicker();
+        warningDOF();
+        btn_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                fieldChecker();
+            }
+        });
+
+
     }
 
     private void textWatch()
@@ -401,4 +414,43 @@ public class DetailsEntryActivity extends AppCompatActivity
         Toast.makeText(DetailsEntryActivity.this, age, Toast.LENGTH_SHORT).show();
         return age;
     }
+
+    public void fieldClear()
+    {
+        ed_sintext.getText().clear();
+        ed_fnametext.getText().clear();
+        ed_lnametext.getText().clear();
+        ed_dobtext.getText().clear();
+        ed_grossincometext.getText().clear();
+        ed_rrsptext.getText().clear();
+        ed_sin.setError(null);
+        ed_dob.setError(null);
+        ed_fname.setError(null);
+        ed_lname.setError(null);
+        ed_grossincome.setError(null);
+        ed_rrsp.setError(null);
+
+    }
+
+    public void removeFields()
+    {
+        ed_sin.setEnabled(false);
+        ed_fname.setEnabled(false);
+        ed_lname.setEnabled(false);
+        ed_dob.setEnabled(false);
+        ed_grossincome.setEnabled(false);
+        ed_rrsp.setEnabled(false);
+    }
+
+    public void getBackFields()
+    {
+        ed_sin.setEnabled(true);
+        ed_fname.setEnabled(true);
+        ed_lname.setEnabled(true);
+        ed_dob.setEnabled(true);
+        ed_grossincome.setEnabled(true);
+        ed_rrsp.setEnabled(true);
+
+    }
 }
+
