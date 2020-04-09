@@ -3,6 +3,7 @@ package com.king.c0780996_w2020_mad3125_midterm.user_interface;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.king.c0780996_w2020_mad3125_midterm.R;
@@ -304,5 +306,23 @@ public class DetailsEntryActivity extends AppCompatActivity
         return true;
     }
 
+    private void warningDOF()
+    {
+        ed_doftext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialAlertDialogBuilder(DetailsEntryActivity.this)
+                        .setTitle("INVALID")
+                        .setMessage("You cannot change this field.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
+    }
 
 }
