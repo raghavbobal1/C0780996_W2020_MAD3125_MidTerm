@@ -292,7 +292,7 @@ public class DetailsEntryActivity extends AppCompatActivity
                         ed_fnametext.getText().toString(),
                         ed_lnametext.getText().toString(),
                         getGender(),
-                        .getText().toString(),
+                        ed_dobtext.getText().toString(),
                         Double.parseDouble(ed_grossincometext.getText().toString()),
                         Double.parseDouble(ed_rrsptext.getText().toString()));
                 Intent mIntent = new Intent(DetailsEntryActivity.this, TaxCalculationDetailsActivity.class);
@@ -302,10 +302,11 @@ public class DetailsEntryActivity extends AppCompatActivity
         }
     }
 
-    private void getGender()
+    private String getGender()
     {
         int genderSpinnerPosition = spinner_gender.getSelectedItemPosition();
         gender = String.valueOf(spinner_gender.getItemAtPosition(genderSpinnerPosition));
+        return null;
     }
 
 
