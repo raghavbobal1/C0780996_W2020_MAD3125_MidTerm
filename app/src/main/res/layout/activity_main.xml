@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B21616"
+    android:background="#480606"
     tools:context=".MainActivity">
 
 
@@ -13,6 +13,7 @@
         android:layout_width="276dp"
         android:layout_height="47dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/berkshire_swash"
         android:text="Enter Your Details"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -27,9 +28,9 @@
         android:id="@+id/ed_sin"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24">
 
@@ -48,10 +49,10 @@
         android:id="@+id/ed_fname"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/ed_sin"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ed_sin"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_sin">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -62,20 +63,119 @@
             android:hint="First Name"
             android:textColor="#370208"
             android:textColorHint="#370208" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ed_lname"
-            android:layout_width="276dp"
-            android:layout_height="52dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_lnametext"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:background="#FFFFFF"
-                android:hint="First Name"
-                android:textColor="#370208"
-                android:textColorHint="#370208" />
-        </com.google.android.material.textfield.TextInputLayout>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_lname"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="#480606"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_fname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_lnametext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="Last Name"
+            android:textColor="#480606"
+            android:textColorHint="#480606" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_dob"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_lname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_dobtext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="Date Of Birth"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#370208" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_dof"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        android:background="#370208"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_doftext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="Date Of Filing "
+            android:textColor="#360005"
+            android:textColorHint="#370208" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_grossincome"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_dof">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_grossincometext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#EDE9E9"
+            android:hint="Gross Income"
+            android:textColor="#370208"
+            android:textColorHint="#370208" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="276dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_dob" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ed_rrsp"
+        android:layout_width="276dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_grossincome">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_rrsptext"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="#FFFFFF"
+            android:hint="RRSP Contribution"
+            android:textColor="#370208"
+            android:textColorHint="#370208" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
