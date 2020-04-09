@@ -19,15 +19,15 @@
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edf_name"
+            android:id="@+id/ed_fname"
             android:layout_width="163dp"
             android:layout_height="37dp"
             android:hint="First Name"
             >
-            
+
         </com.google.android.material.textfield.TextInputEditText>
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edl_name"
+            android:id="@+id/ed_lname"
             android:layout_width="163dp"
             android:layout_height="37dp"
             android:hint="Last Name"
@@ -37,7 +37,35 @@
             android:id="@+id/ed_sin"
             android:layout_width="163dp"
             android:layout_height="37dp"
-            android:hint="Enter Your Sin Number"
+            android:hint="Sin Number"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_dob"
+            android:layout_width="163dp"
+            android:layout_height="37dp"
+            android:hint="Birth Date"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_dof"
+            android:layout_width="163dp"
+            android:layout_height="37dp"
+            android:hint="Filling Date"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_grossincome"
+            android:layout_width="163dp"
+            android:layout_height="37dp"
+            android:hint="Gross Income"
+            >
+        </com.google.android.material.textfield.TextInputEditText>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_rrsp"
+            android:layout_width="163dp"
+            android:layout_height="37dp"
+            android:hint="RRSP Contibution"
             >
         </com.google.android.material.textfield.TextInputEditText>
 
