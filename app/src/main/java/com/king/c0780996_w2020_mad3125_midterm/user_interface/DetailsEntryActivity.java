@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -13,6 +14,10 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.king.c0780996_w2020_mad3125_midterm.R;
+
+import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 public class DetailsEntryActivity extends AppCompatActivity
 {
@@ -196,9 +201,15 @@ public class DetailsEntryActivity extends AppCompatActivity
             textWarning = findViewById(R.id.textWarning);
         }
 
+        private void setValue()
+        {
+            LocalDate date = LocalDate.now();
+            DateTimeFormatter dtf = DateTimeFormat.forPattern("dd-MMM-yyyy");
+            ed_doftext.setText(date.toString(dtf));
 
-
-
+            textWarning.setVisibility(View.INVISIBLE);
+            btn_ok.setVisibility(View.INVISIBLE);
+        }
 
 
     }
