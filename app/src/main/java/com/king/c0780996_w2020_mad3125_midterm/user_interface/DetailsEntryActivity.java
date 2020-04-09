@@ -289,6 +289,20 @@ public class DetailsEntryActivity extends AppCompatActivity
         }
     }
 
+    public boolean sinValidations(String s)
+    {
+        int sinFlag = 0;
+        if(ed_sintext.getText().toString().matches("^(\\d{3}-\\d{3}-\\d{3})|(\\d{9})$"))
+        {
+            sinFlag = 1;
+            return true;
+        }
+        if(sinFlag == 0)
+        {
+            return false;
+        }
+        return true;
+    }
 
 
 }
