@@ -111,10 +111,7 @@ public class DetailsEntryActivity extends AppCompatActivity
         textWatch();
 
     }
-
-
-    }
-
+    
     private void textWatch()
     {
         ed_sintext.addTextChangedListener(new TextWatcher()
