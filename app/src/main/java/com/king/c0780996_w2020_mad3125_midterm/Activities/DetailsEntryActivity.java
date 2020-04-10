@@ -87,6 +87,30 @@ public class DetailsEntryActivity extends AppCompatActivity
                 fieldChecker();
             }
         });
+        btn_clear.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                fieldClear();
+            }
+        });
+
+        btn_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn_clear.setVisibility(View.VISIBLE);
+                btn_submit.setVisibility(View.VISIBLE);
+                textWarning.setVisibility(View.INVISIBLE);
+                ed_dobtext.getText().clear();
+                btn_ok.setVisibility(View.INVISIBLE);
+                ed_dob.setError(null);
+                ed_sin.setError(null);
+                getBackFields();
+            }
+        });
+        textWatch();
+
+    }
 
 
     }
