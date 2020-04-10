@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#480606"
-    tools:context=".MainActivity">
+    android:background="#410101"
+    tools:context=".Activities.DetailsEntryActivity">
 
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="276dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="263dp"
+        android:layout_height="43dp"
         android:fontFamily="@font/berkshire_swash"
         android:text="Enter Your Details"
         android:textColor="#FFFFFF"
@@ -20,7 +19,6 @@
         android:textStyle="bold"
         app:fontFamily="@font/berkshire_swash"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +26,7 @@
         android:id="@+id/ed_sin"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +47,7 @@
         android:id="@+id/ed_fname"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,8 +67,7 @@
         android:id="@+id/ed_lname"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:background="#480606"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +87,7 @@
         android:id="@+id/ed_dob"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,18 +99,16 @@
             android:layout_height="46dp"
             android:background="#FFFFFF"
             android:hint="Date Of Birth"
-            android:textColor="#FFFFFF"
+            android:textColor="#370208"
             android:textColorHint="#370208" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ed_dof"
         android:layout_width="276dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="8dp"
-        android:background="#370208"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_gender">
 
@@ -131,7 +126,7 @@
         android:id="@+id/ed_grossincome"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,12 +146,11 @@
         android:id="@+id/spinner_gender"
         android:layout_width="276dp"
         android:layout_height="46dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:background="#F1E5E6"
         android:entries="@array/gender"
         android:textColor="#370208"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_dob" />
 
@@ -164,9 +158,8 @@
         android:id="@+id/ed_rrsp"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_grossincome">
 
@@ -184,20 +177,22 @@
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
         android:shadowColor="#370208"
         android:text="Submit"
         android:textColor="#370208"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/ed_rrsp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_rrsp" />
 
     <Button
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="236dp"
         android:background="#FFFFFF"
         android:shadowColor="#370208"
         android:text="Okay"
@@ -205,38 +200,36 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_rrsp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#FFFFFF"
         android:text="Clear"
         android:textColor="#360005"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/ed_rrsp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btn_submit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_rrsp" />
 
     <TextView
         android:id="@+id/textWarning"
-        android:layout_width="267dp"
-        android:layout_height="58dp"
-        android:background="#FFFFFF"
-        android:text="NOT ELIGIBLE TO FILE TRY NEXT YEAR"
+        android:layout_width="305dp"
+        android:layout_height="79dp"
+        android:background="#090404"
+        android:text="NOT ELIGIBLE TO FILE TAX, TRY NEXT YEAR."
         android:textColor="#AC0000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.351" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

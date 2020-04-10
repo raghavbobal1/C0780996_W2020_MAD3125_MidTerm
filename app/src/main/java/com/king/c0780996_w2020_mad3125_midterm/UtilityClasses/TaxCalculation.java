@@ -1,4 +1,4 @@
-package com.king.c0780996_w2020_mad3125_midterm.utility;
+package com.king.c0780996_w2020_mad3125_midterm.UtilityClasses;
 
 public class TaxCalculation
 {

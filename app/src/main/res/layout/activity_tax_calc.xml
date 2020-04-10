@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#480606">
+    android:background="#410101">
 
     <TextView
         android:id="@+id/textView13"
@@ -252,7 +252,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textSin" />
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/textAge"
         android:layout_width="260dp"
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
@@ -283,7 +283,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text" />
+        app:layout_constraintTop_toBottomOf="@+id/textAge" />
 
     <TextView
         android:id="@+id/textGrossIncome"

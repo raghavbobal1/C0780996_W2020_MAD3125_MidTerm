@@ -1,4 +1,4 @@
-package com.king.c0780996_w2020_mad3125_midterm.user_interface;
+package com.king.c0780996_w2020_mad3125_midterm.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,8 +21,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.king.c0780996_w2020_mad3125_midterm.R;
-import com.king.c0780996_w2020_mad3125_midterm.model_classes.CRACustomer;
-import com.king.c0780996_w2020_mad3125_midterm.utility.Formatter;
+import com.king.c0780996_w2020_mad3125_midterm.RequiredClasses.CRACustomer;
+import com.king.c0780996_w2020_mad3125_midterm.UtilityClasses.Formatter;
 
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;

@@ -1,9 +1,7 @@
-package com.king.c0780996_w2020_mad3125_midterm.model_classes;
+package com.king.c0780996_w2020_mad3125_midterm.RequiredClasses;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import org.joda.time.LocalDate;
 
 public class CRACustomer implements Parcelable
 {
