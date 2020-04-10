@@ -16,13 +16,13 @@ Raghav Bobal
 ## PROJECT OUTPUT
 Screenshot | Description
 --- | ---
-<img src="https://i.ibb.co/gzjdH3L/Screenshot-1586486930.png"/> | Splash screen that lasts 5 seconds.
-<img src="https://ibb.co/f0c7tjX"> | Data entry screen for the app. An audio clip plays that asks users to fill the form. Has checks on each field to see if it is empty. Has checks for age and SIN. Date of filing is set to currentdate. Touching date of filing field will bring up a material alert dialog warning the user.
-<img src="https://ibb.co/J5Bq0Kw"/> | On touching the birthdate field, a date picker pops up.
-<img src="https://ibb.co/BzRKhRD"/> | Alert box shows up on clicking the tax filing date field.
-<img src="https://ibb.co/QJFH5Zf"/> | Validations for SIN number using regex and age. Buttons disappear if the applicant is not over 18 and displays a warning. TextWatcher removes set errors after text change.
-<img src="https://ibb.co/YXM61Br"/> | Valid data entered into the form. Name entry could be in any case and will be displayed in the appropriate format.
-<img src="https://ibb.co/hLKmbtf"/> | Activity displaying all the entered as well as calculated information. Implemented Parcelable for data transfer.
+<img src=""https://i.ibb.co/56KmqWs/splash-Screen.png"/> | Splash screen that lasts 5 seconds.
+<img src="https://i.ibb.co/ckNr07L/Screenshot-1586486388.png"> | Data entry screen for the app.Used Text Watch that checks each field to see if it is empty,checks the age and SIN Number format. Date of filing is set to currentdate and it cannot be changed. Trying to change the date of filing field will give the user a warning message.
+<img src="https://i.ibb.co/7SJp9HX/Screenshot-1586486513.png"/> | Activity to display all the details of the person as well as the calculated details.
+<img src="https://i.ibb.co/VxZdzYK/Screenshot-1586486470.png"/> | Error that appears when the age is less than 18 years old.
+<img src="https://i.ibb.co/K0HztHZ/Screenshot-1586486904.png"/> | Validations for SIN number using regex, age and text watcher.
+<img src="https://i.ibb.co/gzjdH3L/Screenshot-1586486930.png"/> | Error if the gross income is left empty or is invalid.
+<img src="https://i.ibb.co/2KbBPGF/Screenshot-1586486941.png"/> | Error if the RRSP is left empty or is invalid.
 ## REFERENCES
 * [Youtube.com](https://www.youtube.com/watch?v=hwe1abDO2Ag) - Creating a datePicker
 * [Android.jlelse.eu](https://android.jlelse.eu/the-complete-android-splash-screen-guide-c7db82bce565) - Creating a splashscreen
