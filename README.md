@@ -24,11 +24,12 @@ Screenshot | Description
 <img src="https://i.ibb.co/gzjdH3L/Screenshot-1586486930.png"/> | Error if the gross income is left empty or is invalid.
 <img src="https://i.ibb.co/2KbBPGF/Screenshot-1586486941.png"/> | Error if the RRSP is left empty or is invalid.
 ## REFERENCES
-* [Youtube.com](https://www.youtube.com/watch?v=hwe1abDO2Ag) - Creating a datePicker
+* [Youtube.com](https://www.youtube.com/watch?v=VDZas1ax_Xo) - Helped with text watcher.
 * [Android.jlelse.eu](https://android.jlelse.eu/the-complete-android-splash-screen-guide-c7db82bce565) - Creating a splashscreen
-* [Stackoverflow.com](https://stackoverflow.com/questions/3646415/how-to-create-edittext-with-rounded-corners) - Creating custom textboxes
+* [Youtube.com](https://www.youtube.com/watch?v=A9rcKZUm0zM&t=287s) -  Used for removing Action Bars.
 * [Joda.org](https://www.joda.org/joda-time/index.html) - Working with Joda-Time
-* [Howtodoinjava.org](https://howtodoinjava.com/java/calculate-age-from-date-of-birth/) - Calculating age using Joda
-* [Stackoverflow.com](https://stackoverflow.com/questions/20082855/regular-expression-for-canadian-sin-social-insurance-number) - SIN validation regex
+* [Youtube.com](https://www.youtube.com/watch?v=09EsYJrhBYE&t=356s) - Used for text inout layout.
+* [Stackoverflow.com](https://stackoverflow.com/questions/20082855/regular-expression-for-canadian-sin-social-insurance-number) - For SIN Validation.
 * [Sitepoint.com](https://www.sitepoint.com/transfer-data-between-activities-with-android-parcelable/) - Data transfer between activities using parcelable
 * [Journaldev.com](https://www.journaldev.com/14748/android-textinputlayout-example) - Working with textfields using Material Design
+* [Youtube.com](https://www.youtube.com/watch?v=aS__9RbCyHg) - Helped with pretty much everything.
