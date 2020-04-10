@@ -319,7 +319,7 @@ public class DetailsEntryActivity extends AppCompatActivity
     {
         int genderSpinnerPosition = spinner_gender.getSelectedItemPosition();
         gender = String.valueOf(spinner_gender.getItemAtPosition(genderSpinnerPosition));
-        return null;
+        return gender;
     }
 
 
