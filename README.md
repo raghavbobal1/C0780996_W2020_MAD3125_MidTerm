@@ -16,7 +16,7 @@ Raghav Bobal
 ## PROJECT OUTPUT
 Screenshot | Description
 --- | ---
-<img src="https://ibb.co/W6VZSWB"/> | Splash screen that lasts 5 seconds.
+<img src="https://i.ibb.co/gzjdH3L/Screenshot-1586486930.png"/> | Splash screen that lasts 5 seconds.
 <img src="https://ibb.co/f0c7tjX"> | Data entry screen for the app. An audio clip plays that asks users to fill the form. Has checks on each field to see if it is empty. Has checks for age and SIN. Date of filing is set to currentdate. Touching date of filing field will bring up a material alert dialog warning the user.
 <img src="https://ibb.co/J5Bq0Kw"/> | On touching the birthdate field, a date picker pops up.
 <img src="https://ibb.co/BzRKhRD"/> | Alert box shows up on clicking the tax filing date field.
