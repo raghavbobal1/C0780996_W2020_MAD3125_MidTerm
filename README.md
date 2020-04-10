@@ -16,13 +16,13 @@ Raghav Bobal
 ## PROJECT OUTPUT
 Screenshot | Description
 --- | ---
-<img src="https://ibb.co/W6VZSWB" alt="datepicker"/> | Splash screen that lasts 5 seconds.
-<img src="https://ibb.co/f0c7tjX" alt="datepicker"/> | Data entry screen for the app. An audio clip plays that asks users to fill the form. Has checks on each field to see if it is empty. Has checks for age and SIN. Date of filing is set to currentdate. Touching date of filing field will bring up a material alert dialog warning the user.
-<img src="https://ibb.co/J5Bq0Kw" alt="datepicker"/> | On touching the birthdate field, a date picker pops up.
-<img src="https://ibb.co/BzRKhRD" alt="alert"/> | Alert box shows up on clicking the tax filing date field.
-<img src="https://ibb.co/QJFH5Zf" alt="errors"/> | Validations for SIN number using regex and age. Buttons disappear if the applicant is not over 18 and displays a warning. TextWatcher removes set errors after text change.
-<img src="https://ibb.co/YXM61Br" alt="errors"/> | Valid data entered into the form. Name entry could be in any case and will be displayed in the appropriate format.
-<img src="https://ibb.co/hLKmbtf" alt="details1"/> | Activity displaying all the entered as well as calculated information. Implemented Parcelable for data transfer.
+<img src="https://ibb.co/W6VZSWB"/> | Splash screen that lasts 5 seconds.
+<img src="https://ibb.co/f0c7tjX"> | Data entry screen for the app. An audio clip plays that asks users to fill the form. Has checks on each field to see if it is empty. Has checks for age and SIN. Date of filing is set to currentdate. Touching date of filing field will bring up a material alert dialog warning the user.
+<img src="https://ibb.co/J5Bq0Kw"/> | On touching the birthdate field, a date picker pops up.
+<img src="https://ibb.co/BzRKhRD"/> | Alert box shows up on clicking the tax filing date field.
+<img src="https://ibb.co/QJFH5Zf"/> | Validations for SIN number using regex and age. Buttons disappear if the applicant is not over 18 and displays a warning. TextWatcher removes set errors after text change.
+<img src="https://ibb.co/YXM61Br"/> | Valid data entered into the form. Name entry could be in any case and will be displayed in the appropriate format.
+<img src="https://ibb.co/hLKmbtf"/> | Activity displaying all the entered as well as calculated information. Implemented Parcelable for data transfer.
 ## REFERENCES
 * [Youtube.com](https://www.youtube.com/watch?v=hwe1abDO2Ag) - Creating a datePicker
 * [Android.jlelse.eu](https://android.jlelse.eu/the-complete-android-splash-screen-guide-c7db82bce565) - Creating a splashscreen
