@@ -3,8 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/berkshire_swash</item>
         <item>@font/bowlby_one</item>
-        <item>@font/gravitas_one</item>
-        <item>@font/luckiest_guy</item>
         <item>@font/noto_sans</item>
         <item>@font/noto_sans_bold</item>
     </array>

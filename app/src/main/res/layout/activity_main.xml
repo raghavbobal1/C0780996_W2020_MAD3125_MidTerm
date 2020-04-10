@@ -10,15 +10,17 @@
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="263dp"
-        android:layout_height="43dp"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
         android:fontFamily="@font/berkshire_swash"
-        android:text="Enter Your Details"
+        android:gravity="center"
+        android:text=" Enter Your Details"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:fontFamily="@font/berkshire_swash"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,9 +108,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ed_dof"
         android:layout_width="276dp"
-        android:layout_height="53dp"
+        android:layout_height="52dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_gender">
 
@@ -126,7 +129,6 @@
         android:id="@+id/ed_grossincome"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,11 +148,12 @@
         android:id="@+id/spinner_gender"
         android:layout_width="276dp"
         android:layout_height="46dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:background="#F1E5E6"
         android:entries="@array/gender"
         android:textColor="#370208"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_dob" />
 
@@ -158,8 +161,8 @@
         android:id="@+id/ed_rrsp"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_grossincome">
 
@@ -192,7 +195,7 @@
         android:id="@+id/btn_ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="236dp"
+        android:layout_marginBottom="160dp"
         android:background="#FFFFFF"
         android:shadowColor="#370208"
         android:text="Okay"
@@ -200,6 +203,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -227,9 +231,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
+        app:layout_constraintVertical_bias="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
